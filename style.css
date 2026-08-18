@@ -4,31 +4,217 @@
 
 body {
   margin: 0;
-  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqhso_MbnmEHaPZgERTHbEpmRIRd2vQJSs6l7B1icIC8Hc7q4RvtXy8VsQAaLhRouJfACuthErS1oxf-bPP3-MmVD3W9_3P5gm9V-Kv1es&s=10");
-  color: #1c1c1c;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #2d0a4e 100%);
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  min-height: 100vh;
 }
 
 #all-contents {
-  max-width: 1500px;
+  max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   padding: 32px 40px;
 }
 
+/* Navigation styles */
+nav {
+  background: linear-gradient(90deg, #1f0055 0%, #4a0080 50%, #1f0055 100%);
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 3px solid #ff006e;
+  box-shadow:
+    0 0 20px rgba(255, 0, 110, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+nav h1 {
+  color: #ffed4e;
+  text-shadow:
+    0 0 10px #ff006e,
+    2px 2px 0px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+#nav-ul {
+  list-style: none;
+  margin: 15px 0 0 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: 2px solid #00d9ff;
+  border-radius: 8px;
+  background: rgba(0, 217, 255, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-li a:hover {
+  background: #00d9ff;
+  color: #1f0055;
+  box-shadow: 0 0 15px #00d9ff;
+  transform: scale(1.05);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 550px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.Sidebar-img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  border: 4px solid #ff006e;
+  border-radius: 12px;
+  box-shadow:
+    0 0 25px rgba(255, 0, 110, 0.6),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.Sidebar-img:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 35px rgba(255, 0, 110, 0.8),
+    0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    rgba(31, 0, 85, 0.7) 0%,
+    rgba(74, 0, 128, 0.7) 100%
+  );
+  padding: 40px;
+  border-radius: 12px;
+  border: 3px solid #00d9ff;
+  box-shadow:
+    0 0 20px rgba(0, 217, 255, 0.3),
+    inset 0 0 15px rgba(0, 217, 255, 0.1);
+  gap: 20px;
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.contents h2 {
+  color: #ffed4e;
+  text-shadow:
+    0 0 8px #ff006e,
+    2px 2px 0px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  margin: 0 0 15px 0;
+  font-weight: 900;
+  grid-column: auto;
+  grid-row: auto;
+  padding: 0;
+}
+
+.contents p {
+  color: #00d9ff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  grid-column: auto;
+  grid-row: auto;
+  padding: 0;
+}
+
+#interest {
+  background: rgba(255, 0, 110, 0.15);
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 5px solid #ff006e;
+  margin-top: 0;
+}
+
+#interest h3 {
+  color: #ff006e;
+  text-shadow: 0 0 8px #ff006e;
+  font-size: 1.6rem;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#interest ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#interest li {
+  color: #ffed4e;
+  padding: 15px 0;
+  font-weight: 600;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+#interest li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #ff006e;
+  font-size: 1.2rem;
+}
+
 /* Portfolio styles */
 .content h1 {
-  color: black;
+  color: #ffed4e;
+  text-shadow:
+    0 0 10px #ff006e,
+    2px 2px 0px rgba(0, 0, 0, 0.5);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.content h3 {
+  color: #00d9ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  margin-top: 30px;
 }
 
 #portfolio {
   list-style: none;
-  margin: 0;
+  margin: 20px 0;
   padding: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px;
 }
 
 #portfolio li {
@@ -41,30 +227,76 @@ body {
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
-  color: #444;
-  padding: 16px 20px;
+  color: #fff;
+  padding: 20px 25px;
   font-size: 1.1rem;
-  font-weight: 500;
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 110, 0.2) 0%,
+    rgba(0, 217, 255, 0.2) 100%
+  );
+  border: 3px solid #ff006e;
   border-radius: 12px;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#portfolio a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 217, 255, 0.3) 0%,
+    rgba(255, 0, 110, 0.3) 100%
+  );
+  transition: left 0.3s ease;
+  z-index: -1;
 }
 
 #portfolio a:hover {
-  background: #000;
-  color: #fff;
-  transform: translateX(4px);
+  background: linear-gradient(90deg, #ff006e 0%, #00d9ff 100%);
+  color: #1f0055;
+  transform: translateX(8px) scale(1.02);
+  box-shadow:
+    0 0 25px #ff006e,
+    0 0 15px #00d9ff,
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  border-color: #00d9ff;
 }
 
 #portfolio a::after {
-  content: "->";
-  font-size: 0.85rem;
-  opacity: 0.4;
-  transition: opacity 0.25s ease;
+  content: "→";
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  margin-left: 10px;
 }
 
 #portfolio a:hover::after {
   opacity: 1;
+  transform: translateX(5px);
+}
+
+/* General content styling */
+.content {
+  background: linear-gradient(
+    135deg,
+    rgba(31, 0, 85, 0.8) 0%,
+    rgba(74, 0, 128, 0.8) 100%
+  );
+  padding: 40px;
+  border-radius: 15px;
+  border: 3px solid #00d9ff;
+  box-shadow:
+    0 0 30px rgba(0, 217, 255, 0.3),
+    0 0 60px rgba(255, 0, 110, 0.2);
 }
