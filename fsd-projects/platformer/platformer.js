@@ -46,7 +46,10 @@ $(function () {
     createPlatform(1120, 300, 180, 20, "#35c98b");
     createPlatform(1320, 430, 50, 50, "#ffcf33");
     createPlatform(500, 500, 150, 20, "#f4c95d", 420, 700, 1.5);
-    createPlatform(760, 420, 150, 20, "#ff7f66", null, null, 1, 350, 520, 1);
+    createPlatform(760, 420, 150, 20, "#ff7f66", null, null, 1, 350, 620, 1);
+    createFakePlatform(1000, 300, 150, 20, "#5bc0eb", 900, 1200, 1.5);
+    createFakePlatform(1200, 400, 150, 20, "#ffcf33", 1100, 1400, 1.5);
+    creattrapplatform(600, 200, 150, 20, "#c084fc", 500, 800, 1.5);
 
     // TODO 3 - Create Collectables
 
@@ -54,6 +57,8 @@ $(function () {
     createCollectable("grace", 475, 95, 0.5, 0.7);
     createCollectable("kennedi", 945, 125, 0.5, 0.7);
     createCollectable("steve", 1330, 375, 0.5, 0.7);
+    createFakeCollectable("diamond", 1050, 250, 0.5, 0.7);
+    createTrapCollectable("kennedi", 700, 450, 0.5, 0.7);
 
     // TODO 4 - Create Cannons
 
@@ -62,6 +67,8 @@ $(function () {
     createCannon("right", 250, 2200, 28, 28, 120, 560, 1.5);
     createCannon("bottom", 760, 1900, 20, 20, 600, 1050, 2);
     createCannon("left", 520, 1300, 24, 24, 180, 650, 2);
+    createfakeCannon("top", 400, 2000, 20, 20, 100, 600, 1.5);
+    createfakeCannon("right", 1000, 2500, 20, 20, 200, 800, 2);
 
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
