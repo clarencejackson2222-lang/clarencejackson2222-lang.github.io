@@ -160,6 +160,8 @@
         points += 1;
         changeBoxText(points);
 
+        // change box shape 
+        box.css("border-radius", Math.random() * 1 * 50 + "%")  + " 0";
         // Change box color
         var newColor = getRandomColor();
         box.css("background-color", newColor);
