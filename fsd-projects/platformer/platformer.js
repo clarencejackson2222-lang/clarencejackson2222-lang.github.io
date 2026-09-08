@@ -46,16 +46,28 @@ $(function () {
     createPlatform(1120, 300, 180, 20, "#35c98b");
     createPlatform(1320, 430, 50, 50, "#ffcf33");
     createPlatform(500, 500, 150, 20, "#f4c95d", 420, 700, 1.5);
-    createPlatform(760, 420, 150, 20, "rgba(8, 220, 248, 0.42)", null, null, 1, 350, 620, 1);
-   createBadPlatform(300, 400, 150, 20, "#ff0000", null, null, 1, 250, 500, 1);
+    createPlatform(
+      760,
+      420,
+      150,
+      20,
+      "rgba(8, 220, 248, 0.42)",
+      null,
+      null,
+      1,
+      350,
+      620,
+      1,
+    );
+    createBadPlatform(300, 400, 150, 20, "#ff0000");
+    createBadPlatform(1080, 520, 180, 20, "#ff5a5f");
 
     // TODO 3 - Create Collectables
 
-    createCollectable("diamond", 260, 175, 0.5, 0.7);
+    createCollectable("diamond", 260, 175, 0.5, 0.7, 220, 350, 1.5);
     createCollectable("grace", 475, 95, 0.5, 0.7);
-    createCollectable("kennedi", 945, 125, 0.5, 0.7);
+    createCollectable("kennedi", 945, 125, 0.5, 0.7, 900, 1030, 1.5);
     createCollectable("steve", 1330, 375, 0.5, 0.7);
-    
 
     // TODO 4 - Create Cannons
 
@@ -64,7 +76,6 @@ $(function () {
     createCannon("right", 250, 2200, 28, 28, 120, 560, 1.5);
     createCannon("bottom", 760, 1900, 20, 20, 600, 1050, 2);
     createCannon("left", 520, 1300, 24, 24, 180, 650, 2);
-    
 
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //

@@ -7,15 +7,22 @@
   <script src="jquery.min.js"></script>
   <style>
     .box {
-      width: 70px;
-      height: 70px;
-      background-color: teal;
-      background-image: url('football-png-24998.jpg');
-      background-size: cover;
-      font-size: 300%;
+      width: 100px;
+      height: 60px;
+      background-color: #8b451f;
+      background-image: linear-gradient(90deg, transparent 43%, #fff 43%, #fff 57%, transparent 57%), repeating-linear-gradient(0deg, transparent 0 7px, #fff 7px 10px, transparent 10px 17px);
+      background-size: 100% 100%, 28px 46px;
+      background-position: center, center;
+      background-repeat: no-repeat;
+      border: 2px solid #5c2d16;
+      border-radius: 50%;
+      box-shadow: inset -8px -5px 0 rgba(70, 28, 10, 0.25), 0 4px 8px rgba(0, 0, 0, 0.35);
+      color: #fff;
+      font-size: 180%;
+      font-weight: bold;
+      line-height: 60px;
       text-align: center;
       user-select: none;
-      display:square;
       position: absolute;
       top: 100px;
       /* Change me! */
@@ -27,12 +34,34 @@
       background-image: url('https://media.istockphoto.com/id/2167499398/photo/american-football-grass-field-top-view.jpg?s=612x612&w=0&k=20&c=-i_pGUn4eD6mj5aeT0ePNw-xTKnVTlhBW-deoPR6sps=');
       background-size: cover;
     }
+
+    .score {
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      left: 50%;
+      pointer-events: none;
+      position: fixed;
+      text-align: center;
+      text-shadow: 2px 2px 4px #000;
+      top: 1rem;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .score.final {
+      font-size: clamp(3rem, 12vw, 8rem);
+      top: 40%;
+      transform: translate(-50%, -50%);
+    }
   </style>
   <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 </head>
 
 <body class="board">
   <!-- HTML for the box -->
+  <div class="score">Score: <span>0</span></div>
   <div class="box">?</div>
 
   <script>
@@ -46,6 +75,7 @@
 
       var box = jQuery(".box"); // reference to the HTML .box element
       var board = jQuery(".board"); // reference to the HTML .board element
+      var score = jQuery(".score");
       var boardWidth = board.width(); // the maximum X-Coordinate of the screen
       var boardHeight = jQuery(window).height(); // the maximum Y-Coordinate of the screen
 
@@ -93,6 +123,8 @@
       function endGame() {
         clearInterval(interval);
         console.log("You suck! Score: " + points);
+
+        score.addClass("final").text("Final score: " + points);
 
         board.css("background-image", "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6mJWJ9U5yQUbVMNJT3NCFNozmSrh8V7x7g0AqygvXUNKoY36xPmkHa1E:https://www.shutterstock.com/shutterstock/videos/30920176/thumb/9.jpg%3Fip%3Dx480&s=10')");
         board.css("background-size", "cover");
@@ -159,12 +191,7 @@
         // Increase points
         points += 1;
         changeBoxText(points);
-
-        // change box shape 
-        box.css("border-radius", Math.random() * 1 * 50 + "%")  + " 0";
-        // Change box color
-        var newColor = getRandomColor();
-        box.css("background-color", newColor);
+        score.find("span").text(points);
 
         // Speed base calculation
         speed = 3 * points + 10;
