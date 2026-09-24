@@ -31,6 +31,15 @@ physikz.addRandomVelocity(circle, canvas, 5, 5);
 view.addChild(circle);
 circles.push(circle);
 }
+// Initialize gamification features (unlocked after completing educational TODOs)
+Gamification.init({
+    canvas: canvas,
+    view: view,
+    draw: draw,
+    physikz: physikz,
+    circles: circles,
+    game: game
+});
 
 
         // TODO 3 : Call the drawCircle() function
@@ -72,6 +81,9 @@ for (var i = 0; i < circles.length; i++) {
             physikz.updatePosition(circles[i]); 
             game.checkCirclePosition(circles[i]);
         }
+        // Update gamification features each frame
+Gamification.update();
+
         }
         /* 
         This Function should check the position of a circle that is passed to the 
