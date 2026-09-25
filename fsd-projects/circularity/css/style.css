@@ -47,3 +47,10 @@
     background: #0080FF;
     color: white;
 }
+/*style */
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIarr4cW6i_FrUQSh-OgloB2KvABPnrQHZ0koZ1drAuUIh1DnJS42s6wvs:https://www.republicservices.com/sites/default/files/styles/image_to_webp_mobile/public/Circularity-background-circle.png.webp&s=10');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

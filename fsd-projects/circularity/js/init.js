@@ -83,15 +83,15 @@ for (var i = 0; i < circles.length; i++) {
         }
         // Update gamification features each frame
 Gamification.update();
-
-        }
+    }
+        
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
         game.checkCirclePosition = function(circle) {
-
+        
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
