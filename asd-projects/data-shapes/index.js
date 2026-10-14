@@ -35,10 +35,24 @@ $(document).ready(function () {
   /////////////////////////////////////////////////
 
   // TODO 1: create a new shape object and add it to the array
-  
+  var shape ={
+    color: "blue",
+    shape: "circle",
+    repeat: 3,
+    goodBehavior: "bounce"
+    
+  }
+ dataShapes.push(shape);
 
   // TODO 2: add a new property to all data shapes
-  
+  for (var i = 0; i < dataShapes.length; i++) {
+    dataShapes[i].badBehavior = "stop";
+    var currentshape = dataShapes[i];
+    if (color === "red") {
+      goodBehavior = "bounce";}
+      else if (color === "blue") { goodBehavior = "spin";
+    }
+  }
 
   // TODO 3-a: add a function that handles the static display type
   
