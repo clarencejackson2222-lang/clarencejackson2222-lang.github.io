@@ -71,7 +71,7 @@ $(document).ready(function () {
     animationDetails.displayType = 3;
     
   }
-
+handleBad(resetDisplay());
   /////////////////////////////////////////////////
   // BUTTON HANDLERS BELOW HERE (3-b, 4-b, 5-b) ///
   /////////////////////////////////////////////////
